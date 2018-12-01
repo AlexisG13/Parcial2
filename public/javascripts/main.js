@@ -1,12 +1,12 @@
-window.onload()=()=>{
-    app.init;
+window.onload=()=>{
+    app.init();
 }
 
 var app={
-    init:function(){
-        this.loadContent();
+    init:()=>{
+        this.loadContent;
     },
-    addRow:function(data){
+    addRow: (data)=>{
         tb=document.getElementsByClassName('players');
         tr=document.createElement('tr');
         tr.innerHTML=`<td>${data.id}</td> 
@@ -19,7 +19,10 @@ var app={
         `;
         tb.append(tr);
     },
-    loadContent:function(){
-        fetch('api/')
+    loadContent:()=>{
+        fetch('/api/Jugador%20de%20ESports',method='get').then
+        (res.players.forEach(element => {
+           this.addRow(element); 
+        }))
     }
 }

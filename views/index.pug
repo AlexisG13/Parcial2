@@ -2,10 +2,11 @@ extends layout
 
 block content
   h1= title
-  table(class= "table table-stripped")
+  table(class="table table-dark table-bordered")
     thead.thead-blue
       td ID
       td Nombre 
       td Juego        
       td Años de Experiencia
-    tbody(class=players)
+    tbody(class='players')
+  script(src="/javascripts/main.js")

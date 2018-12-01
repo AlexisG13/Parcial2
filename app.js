@@ -26,7 +26,7 @@ mongoose.connect('mongodb://localhost/esports',{useNewUrlParser:true});
 
 app.use('/', indexRouter);
 app.use('/users', usersRouter);
-app.use('/api/Jugador de ESports',playersRouter);
+app.use('/api/Jugador%20de%20ESports/',playersRouter);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {

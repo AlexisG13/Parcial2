@@ -3,39 +3,44 @@ mongoose = require('mongoose');
 Jugador = require('../Models/PlayerModel');
 
 PlayerController = {
-    post: function(req,res){
-        res.send('Hello there');
-    }
-
-/*
-    post: function (req, res) {
+    post: (req,res)=> {
         var data = {
-            nombre: res.nombre,
-            juego: res.juego,
-            años: res.años
+            nombre: req.body.nombre,
+            juego: req.body.juego,
+            años: req.body.años
         };
         if (data.nombre != '' && data.juego != '' && data.años != '') {
-            data = new jugador;
-            jugador.save(function (err, jugador) {
-                if (err) {
-                    res.json({
-                        'error': er,
-                        'status': 500
-                    });
-                }
-                else {
-                    res.json({
-                        'status': 400
-                    })
-                }
-            })
+            data=new Jugador({nombre:data.nombre,juego:data.juego,años:data.años});
+            data.save;
+            res.json({'status':200,'jugador':data});
         }
         else {
             res.json({
-                'status': 400
+                'status': 500
             })
         }
-    }*/
+    },
+
+    getAll: function(req,res){
+        players=Jugador.find({});
+        res.json({'status':200,players});
+    },
+
+    delete: function(req,res){
+        Jugador.findByIdAndDelete(req.id,function (err){
+            if(err){
+                res.json({'status':500});
+            }
+            else{
+                res.json({
+                    'status':200,
+                    'jugador':req.nombre,
+                    'id':req.id
+                })
+            }
+        });
+
+    }
 }; 
 
 module.exports = PlayerController;
