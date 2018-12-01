@@ -1,7 +1,7 @@
 express = require('express');
 mongoose = require('mongoose');
-
-PlayerModel= new mongoose.Schema({
+var Schema = mongoose.Schema;
+var PlayerModel= new Schema({
     nombre: String,
     juego: String,
     años: number
