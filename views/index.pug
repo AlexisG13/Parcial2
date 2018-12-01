@@ -3,8 +3,9 @@ extends layout
 block content
   h1= title
   table 
-    th ID
-    th Nombre 
-    th Juego        
-    th Años de Experiencia
-
+    thead
+      th ID
+      th Nombre 
+      th Juego        
+      th Años de Experiencia
+    tbody(class=players)
