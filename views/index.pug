@@ -2,10 +2,10 @@ extends layout
 
 block content
   h1= title
-  table 
-    thead
-      th ID
-      th Nombre 
-      th Juego        
-      th Años de Experiencia
+  table(class= "table table-stripped")
+    thead.thead-blue
+      td ID
+      td Nombre 
+      td Juego        
+      td Años de Experiencia
     tbody(class=players)

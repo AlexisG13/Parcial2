@@ -3,7 +3,7 @@ mongoose = require('mongoose');
 jugador = require('../Models/Jugador');
 
 PlayerController={};
-
+/*
 PlayerController.post=function(req,res){
     var data={
         nombre:res.nombre,
@@ -26,6 +26,11 @@ PlayerController.post=function(req,res){
             }
         })
     }
+    else{
+        res.json({
+            'status':400
+        })
+    }
 }
-
+*/
 module.exports=PlayerController;
